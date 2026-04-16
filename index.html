@@ -537,7 +537,7 @@
                 </div>
                 <div class="stat-card" style="max-width: 600px; margin-top: 1.5rem; border-color: var(--danger);">
                     <h3 style="color: var(--danger);">Danger Zone</h3>
-                    <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">Clear all local data. Note: Data stored in the cloud will remain.</p>
+                    <p style="color: var(--text-muted); margin: 0.5rem 0 1rem;">Clear all local data. Note: Data stored in cloud will remain.</p>
                     <button class="btn btn-danger" onclick="window.clearLocalData()">Reset Local Cache</button>
                 </div>
             </section>
@@ -683,12 +683,26 @@
                 });
         });
 
+        // --- UPDATED LOGOUT HANDLER ---
         document.getElementById('logoutBtn').addEventListener('click', () => {
             if(confirm("Log out?")) {
-                signOut(auth).then(() => {
-                    showToast("Logged out", "success");
-                    location.reload();
-                });
+                signOut(auth)
+                    .then(() => {
+                        showToast("Logged out successfully", "success");
+                        
+                        // Manually switch views to ensure immediate response
+                        document.getElementById('app-container').classList.add('hidden');
+                        document.getElementById('login-view').classList.remove('hidden');
+                        
+                        // Clear local memory
+                        currentUser = null;
+                        state.transactions = [];
+                        
+                    })
+                    .catch((error) => {
+                        console.error("Logout Error:", error);
+                        showToast("Error logging out", "error");
+                    });
             }
         });
 
