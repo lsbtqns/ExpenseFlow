@@ -20,7 +20,6 @@
             --success: #10B981;
         }
 
-        /* Dark Mode Theme Class */
         body.dark-mode {
             --bg-body: #111827;
             --bg-card: #1F2937;
@@ -147,7 +146,6 @@
             font-weight: bold;
         }
 
-        /* --- Main Content --- */
         .main-content {
             flex: 1;
             overflow-y: auto;
@@ -164,7 +162,6 @@
 
         h1 { font-size: 1.8rem; font-weight: 700; }
 
-        /* --- Buttons --- */
         .btn {
             padding: 0.75rem 1.5rem;
             border-radius: var(--radius);
@@ -181,16 +178,12 @@
 
         .btn-primary { background-color: var(--primary); color: white; box-shadow: 0 4px 6px rgba(79, 70, 229, 0.3); }
         .btn-primary:hover { background-color: var(--primary-hover); transform: translateY(-1px); }
-        
         .btn-secondary { background-color: var(--bg-body); color: var(--text-main); border: 1px solid var(--border); }
-        
         .btn-sm { padding: 0.4rem 0.8rem; font-size: 0.85rem; }
-
         .btn-danger { background-color: var(--danger); color: white; }
         .btn-outline { background-color: transparent; border: 1px solid var(--border); color: var(--text-main); }
         .btn-outline:hover { border-color: var(--primary); color: var(--primary); }
 
-        /* Google Button Styling */
         .btn-google {
             background-color: #fff;
             color: #3c4043;
@@ -204,11 +197,8 @@
             box-shadow: 0 1px 3px 0 rgba(60,64,67,0.3), 0 4px 8px 3px rgba(60,64,67,0.15);
         }
         .btn-google svg { width: 18px; height: 18px; }
-
-        /* Modifier for Full Width Buttons */
         .btn-block { width: 100%; justify-content: center; }
 
-        /* --- Forms --- */
         .form-group { margin-bottom: 1.25rem; text-align: left; }
         .form-label { display: block; margin-bottom: 0.5rem; font-weight: 500; color: var(--text-main); }
         .form-input, .form-select {
@@ -222,7 +212,6 @@
         }
         .form-input:focus { outline: 2px solid var(--primary); border-color: transparent; }
 
-        /* --- Toggle Switch --- */
         .switch { position: relative; display: inline-block; width: 50px; height: 26px; }
         .switch input { opacity: 0; width: 0; height: 0; }
         .slider {
@@ -236,42 +225,35 @@
         input:checked + .slider { background-color: var(--primary); }
         input:checked + .slider:before { transform: translateX(24px); }
 
-        /* --- Views --- */
         .view-section { display: none; animation: fadeIn 0.3s ease; }
         .view-section.active { display: block; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* --- Dashboard --- */
         .dashboard-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; margin-bottom: 2rem; }
         .stat-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); }
         .stat-label { font-size: 0.875rem; color: var(--text-muted); margin-bottom: 0.5rem; }
         .stat-value { font-size: 1.8rem; font-weight: 700; color: var(--text-main); }
 
-        /* --- Charts --- */
         .charts-container { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; margin-bottom: 2rem; }
         @media (max-width: 900px) { .charts-container { grid-template-columns: 1fr; } }
         .chart-card { background-color: var(--bg-card); padding: 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); border: 1px solid var(--border); min-height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
         canvas { max-width: 100%; max-height: 250px; }
 
-        /* --- Table --- */
         .transaction-table { width: 100%; border-collapse: collapse; background-color: var(--bg-card); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
         .transaction-table th, .transaction-table td { padding: 1rem; text-align: left; border-bottom: 1px solid var(--border); }
         .transaction-table th { background-color: var(--bg-body); font-weight: 600; color: var(--text-muted); }
         .category-tag { display: inline-block; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 600; }
 
-        /* --- Modal --- */
         .modal-overlay { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center; z-index: 200; opacity: 0; visibility: hidden; transition: all 0.3s; }
         .modal-overlay.open { opacity: 1; visibility: visible; }
         .modal { background-color: var(--bg-card); padding: 2rem; border-radius: var(--radius); width: 100%; max-width: 500px; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); transform: scale(0.95); transition: transform 0.3s; }
         .modal-overlay.open .modal { transform: scale(1); }
         .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; }
 
-        /* --- Toast --- */
         .toast-container { position: fixed; bottom: 2rem; right: 2rem; z-index: 300; }
         .toast { background-color: var(--bg-card); color: var(--text-main); padding: 1rem 1.5rem; border-radius: var(--radius); box-shadow: var(--shadow); margin-top: 0.5rem; border-left: 4px solid var(--primary); display: flex; align-items: center; gap: 0.75rem; animation: slideIn 0.3s ease forwards; }
         @keyframes slideIn { from { transform: translateX(100%); opacity: 0; } to { transform: translateX(0); opacity: 1; } }
 
-        /* --- Responsive --- */
         .mobile-menu-btn { display: none; background: none; border: none; font-size: 1.5rem; color: var(--text-main); cursor: pointer; }
         @media (max-width: 768px) {
             .sidebar { position: fixed; left: -100%; height: 100%; width: 80%; box-shadow: 2px 0 10px rgba(0,0,0,0.1); }
@@ -298,7 +280,6 @@
             <h2 style="margin-bottom: 0.5rem;">Welcome Back</h2>
             <p style="color: var(--text-muted); margin-bottom: 2rem;">Track your finances with ease.</p>
             
-            <!-- Google Login Button (Primary Integration) -->
             <button type="button" class="btn btn-google" id="googleLoginBtn">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4" />
@@ -407,7 +388,6 @@
 
         <!-- Main Content -->
         <main class="main-content">
-            <!-- Header -->
             <header>
                 <button class="mobile-menu-btn" onclick="window.toggleSidebar()">☰</button>
                 <h1 id="pageTitle">Dashboard</h1>
@@ -571,7 +551,8 @@
                 <h2 id="modalTitle">Add Expense</h2>
                 <button class="btn btn-outline btn-sm" onclick="window.closeModal()">✕</button>
             </div>
-            <form id="expenseForm">
+            <!-- REMOVED onsubmit from HTML to avoid double submission -->
+            <form id="expenseForm"> 
                 <input type="hidden" id="expenseId">
                 <div class="form-group">
                     <label class="form-label">Amount</label>
@@ -626,10 +607,9 @@
         const db = getFirestore(app);
         const provider = new GoogleAuthProvider();
 
-        // --- GLOBAL STATE & HELPERS ---
+        // --- GLOBAL STATE ---
         const APP_KEY = 'expenseTrackerData_v4';
         
-        // Holds the data in memory
         let state = {
             isSetup: false,
             transactions: [],
@@ -651,12 +631,11 @@
 
         let currentUser = null;
 
-        // Expose functions to window for HTML onclick events
+        // Expose functions to window
         window.switchView = switchView;
         window.toggleSidebar = toggleSidebar;
         window.openModal = openModal;
         window.closeModal = closeModal;
-        window.handleExpenseSubmit = handleExpenseSubmit;
         window.editTransaction = editTransaction;
         window.deleteTransaction = deleteTransaction;
         window.addCategory = addCategory;
@@ -669,25 +648,21 @@
 
         // --- AUTH LOGIC ---
 
-        // Listen for auth state changes
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 currentUser = user;
                 document.getElementById('login-view').classList.add('hidden');
                 document.getElementById('onboarding-view').classList.add('hidden');
                 
-                // Check if user has a settings doc (isSetup)
                 const userDocRef = doc(db, "users", user.uid);
                 const docSnap = await getDoc(userDocRef);
 
                 if (docSnap.exists()) {
-                    // User exists, load data
                     await loadUserData(user.uid);
                     state.isSetup = true;
                     document.getElementById('app-container').classList.remove('hidden');
                     initApp();
                 } else {
-                    // New user, show onboarding
                     document.getElementById('onboarding-view').classList.remove('hidden');
                 }
             } else {
@@ -698,19 +673,16 @@
             }
         });
 
-        // Google Login Handler
         document.getElementById('googleLoginBtn').addEventListener('click', () => {
             signInWithPopup(auth, provider)
                 .then((result) => {
-                    // This triggers onAuthStateChanged
                     showToast("Signed in successfully", "success");
                 }).catch((error) => {
-                    console.error(error);
+                    console.error("Auth Error:", error);
                     showToast("Login Failed: " + error.message, "error");
                 });
         });
 
-        // Logout Handler
         document.getElementById('logoutBtn').addEventListener('click', () => {
             if(confirm("Log out?")) {
                 signOut(auth).then(() => {
@@ -720,7 +692,6 @@
             }
         });
 
-        // Onboarding Form Handler
         document.getElementById('onboardingForm').addEventListener('submit', async (e) => {
             e.preventDefault();
             if (!currentUser) return;
@@ -734,11 +705,9 @@
             state.settings.budget = parseFloat(budget) || 0;
             state.isSetup = true;
 
-            // Save initial user settings to Firestore
             try {
                 await setDoc(doc(db, "users", currentUser.uid), {
                     settings: state.settings,
-                    // We also store default categories so they are in DB
                     categories: state.categories 
                 });
 
@@ -748,25 +717,21 @@
                 showToast('Profile Setup Complete!', 'success');
             } catch (error) {
                 console.error("Error writing document: ", error);
-                showToast("Error saving profile", "error");
+                showToast("Error saving profile: " + error.message, "error");
             }
         });
 
-        // --- DATA SYNCING (FIRESTORE) ---
+        // --- DATA SYNCING ---
 
         async function loadUserData(uid) {
             try {
-                // 1. Load Settings & Categories
                 const userDoc = await getDoc(doc(db, "users", uid));
                 if (userDoc.exists()) {
                     const data = userDoc.data();
                     state.settings = { ...state.settings, ...data.settings };
-                    if (data.categories) {
-                        state.categories = data.categories;
-                    }
+                    if (data.categories) state.categories = data.categories;
                 }
 
-                // 2. Load Transactions
                 const q = query(collection(db, "users", uid, "transactions"), orderBy("date", "desc"));
                 const querySnapshot = await getDocs(q);
                 state.transactions = [];
@@ -776,11 +741,10 @@
 
             } catch (error) {
                 console.error("Error loading data: ", error);
-                showToast("Error loading data", "error");
+                showToast("Error loading data: " + error.message, "error");
             }
         }
 
-        // Updates settings in Firestore
         async function updateSettings() {
             if (!currentUser) return;
             
@@ -795,15 +759,19 @@
                 updateUI();
             } catch (error) {
                 console.error("Error updating settings: ", error);
-                showToast("Failed to save settings", "error");
+                showToast("Failed to save settings: " + error.message, "error");
             }
         }
 
-        // --- TRANSACTION LOGIC (CRUD TO FIREBASE) ---
+        // --- TRANSACTION LOGIC ---
 
-        async function handleExpenseSubmit(e) {
+        // Clean event listener for the form
+        document.getElementById('expenseForm').addEventListener('submit', async (e) => {
             e.preventDefault();
-            if (!currentUser) return;
+            if (!currentUser) {
+                showToast("You must be logged in", "error");
+                return;
+            }
 
             const id = document.getElementById('expenseId').value;
             const amount = parseFloat(document.getElementById('amount').value);
@@ -811,13 +779,16 @@
             const categoryId = document.getElementById('category').value;
             const note = document.getElementById('note').value;
 
-            if (!amount || !date || !categoryId) { showToast('Missing fields', 'error'); return; }
+            if (!amount || !date || !categoryId) { 
+                showToast('Missing fields', 'error'); 
+                return; 
+            }
 
             const transactionData = { amount, date, categoryId, note };
 
             try {
                 if (id) {
-                    // Update
+                    // Update existing
                     const txRef = doc(db, "users", currentUser.uid, "transactions", id);
                     await updateDoc(txRef, transactionData);
                     
@@ -827,18 +798,29 @@
                     }
                     showToast('Updated', 'success');
                 } else {
-                    // Add
+                    // Add new
                     const docRef = await addDoc(collection(db, "users", currentUser.uid, "transactions"), transactionData);
                     state.transactions.push({ id: docRef.id, ...transactionData });
                     showToast('Added', 'success');
                 }
+                
                 closeModal();
                 updateUI();
+                
+                // Reset filters when adding new, so user sees it
+                if(!id) {
+                    const searchInput = document.getElementById('searchInput');
+                    const filterCat = document.getElementById('filterCategory');
+                    if(searchInput) searchInput.value = '';
+                    if(filterCat) filterCat.value = 'all';
+                    renderTransactions();
+                }
+
             } catch (error) {
                 console.error("Error saving transaction: ", error);
-                showToast("Error saving transaction", "error");
+                showToast("Save Failed: " + error.message, "error");
             }
-        }
+        });
 
         async function deleteTransaction(id) {
             if(!currentUser) return;
@@ -850,12 +832,12 @@
                     showToast('Deleted', 'success');
                 } catch (error) {
                     console.error("Error deleting: ", error);
-                    showToast("Error deleting", "error");
+                    showToast("Error deleting: " + error.message, "error");
                 }
             }
         }
 
-        // --- CATEGORY LOGIC (CRUD TO FIREBASE) ---
+        // --- CATEGORY LOGIC ---
 
         async function addCategory() {
             if(!currentUser) return;
@@ -887,12 +869,11 @@
                 updateUI();
             } catch (error) {
                 console.error("Error saving categories", error);
-                showToast("Error saving categories", "error");
+                showToast("Error saving categories: " + error.message, "error");
             }
         }
 
-
-        // --- ORIGINAL UI LOGIC (Preserved) ---
+        // --- ORIGINAL UI LOGIC ---
 
         function initApp() {
             setupDefaultDate();
@@ -928,10 +909,8 @@
         function toggleTheme() {
             const isDark = document.getElementById('themeToggle').checked;
             const newTheme = isDark ? 'dark' : 'light';
-            
             state.settings.theme = newTheme;
             applyTheme(newTheme);
-            // Update settings in DB without full reload
             if(currentUser) {
                 updateDoc(doc(db, "users", currentUser.uid), { settings: state.settings }).catch(console.error);
             }
@@ -1003,6 +982,7 @@
 
         function renderTransactions() {
             const tbody = document.getElementById('allTransactionsBody');
+            if(!tbody) return;
             tbody.innerHTML = '';
             
             const searchTerm = document.getElementById('searchInput')?.value.toLowerCase() || '';
@@ -1251,7 +1231,6 @@
             });
         }
         window.addEventListener('resize', ()=>{ requestAnimationFrame(drawCharts); });
-
     </script>
 </body>
 </html>
